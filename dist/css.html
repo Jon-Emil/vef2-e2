@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+    <html lang="is">
+      <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="styles.css" />
+        <script type="module" src="main.js"></script>
+        <title>Spurningaflokkur—CSS</title>
+      </head>
+      <body>
+        <main>
+    <h1>CSS</h1>
+    <div class="questions">
+      
+    <section class="question">
+      <h2>Spurning 1</h2>
+      <div class="question__text"><p>Fyrir eftirfarandi HTML / for the following HTML:</p><p><br>&lt;div class="text"&gt;<br>&nbsp;&nbsp;&lt;h1 class="important text__title"&gt;Halló heimur&lt;/p&gt;<br>&lt;/div&gt;<br> </p><p>Er skilgreint CSS / there is defined CSS:</p><p><br>.text {<br>&nbsp;&nbsp;font-size: 10px;<br>&nbsp;&nbsp;color: green;<br>}</p><p>.text .text__title {<br>&nbsp;&nbsp;font-size: 1.5em;<br>}</p><p>.important {<br>&nbsp;&nbsp;font-size: 2em;<br>&nbsp;&nbsp;color: red;<br>}</p><p> </p><p>Hvert af eftirfarandi er satt fyrir textann „Halló heimur“ eftir að búið er að reikna gildi?</p></div>
+      <form class="question__form">
+        
+    <div class="answer">
+      <input
+        class="answer__input"
+        data-correct="false"
+        type="radio"
+        name="question0"
+        id="question0-0"
+      />
+      <label class="answer__label" for="question0-0"
+        >font-size: 15px;, color: green;</label
+      >
+    </div>
+  
+    <div class="answer">
+      <input
+        class="answer__input"
+        data-correct="true"
+        type="radio"
+        name="question0"
+        id="question0-1"
+      />
+      <label class="answer__label" for="question0-1"
+        >font-size: 20px;, color: green;</label
+      >
+    </div>
+  
+    <div class="answer">
+      <input
+        class="answer__input"
+        data-correct="false"
+        type="radio"
+        name="question0"
+        id="question0-2"
+      />
+      <label class="answer__label" for="question0-2"
+        >font-size: 15px;, color: red;</label
+      >
+    </div>
+  
+    <div class="answer">
+      <input
+        class="answer__input"
+        data-correct="false"
+        type="radio"
+        name="question0"
+        id="question0-3"
+      />
+      <label class="answer__label" for="question0-3"
+        >font-size: 20px;, color: red;</label
+      >
+    </div>
+  
+        <button>Svara</button>
+      </form>
+    </section>
+  
+    <section class="question">
+      <h2>Spurning 2</h2>
+      <div class="question__text"><p>Ef við erum að nota nýtt gildi fyrir lit í CSS sem er ekki víst að sé stutt í öllum vöfrum, þá ættum við að</p></div>
+      <form class="question__form">
+        
+    <div class="answer">
+      <input
+        class="answer__input"
+        data-correct="false"
+        type="radio"
+        name="question1"
+        id="question1-0"
+      />
+      <label class="answer__label" for="question1-0"
+        >Þetta er ekki stutt í CSS.</label
+      >
+    </div>
+  
+    <div class="answer">
+      <input
+        class="answer__input"
+        data-correct="false"
+        type="radio"
+        name="question1"
+        id="question1-1"
+      />
+      <label class="answer__label" for="question1-1"
+        >Setja upp JavaScript virkni sem bendir notanda á að sækja nýjann vafra sem styður gildið.</label
+      >
+    </div>
+  
+    <div class="answer">
+      <input
+        class="answer__input"
+        data-correct="false"
+        type="radio"
+        name="question1"
+        id="question1-2"
+      />
+      <label class="answer__label" for="question1-2"
+        >Skilgreina fallback gildi á eftir nýja gildinu sem væri notað í stað þess ef það er ekki stutt.</label
+      >
+    </div>
+  
+    <div class="answer">
+      <input
+        class="answer__input"
+        data-correct="true"
+        type="radio"
+        name="question1"
+        id="question1-3"
+      />
+      <label class="answer__label" for="question1-3"
+        >Skilgreina fallback gildi á undan nýja gildinu sem væri notað í stað þess ef það er ekki stutt</label
+      >
+    </div>
+  
+        <button>Svara</button>
+      </form>
+    </section>
+  
+    <section class="question">
+      <h2>Spurning 3</h2>
+      <div class="question__text"><p>Í verkefnum höfum við unnið með „containers“ og „items“ sem hugtök, hvað á það við?</p></div>
+      <form class="question__form">
+        
+    <div class="answer">
+      <input
+        class="answer__input"
+        data-correct="false"
+        type="radio"
+        name="question2"
+        id="question2-0"
+      />
+      <label class="answer__label" for="question2-0"
+        >Hugtök sem eru notuð með `querySelectorAll`: „container“ er það element sem leitað er undir, „items“ það sem er skilað.</label
+      >
+    </div>
+  
+    <div class="answer">
+      <input
+        class="answer__input"
+        data-correct="false"
+        type="radio"
+        name="question2"
+        id="question2-1"
+      />
+      <label class="answer__label" for="question2-1"
+        >„Grid container“ og „grid items“: greinarmunur á foreldri og börnum eingöngu þegar grid er notað.</label
+      >
+    </div>
+  
+    <div class="answer">
+      <input
+        class="answer__input"
+        data-correct="false"
+        type="radio"
+        name="question2"
+        id="question2-2"
+      />
+      <label class="answer__label" for="question2-2"
+        >„Flex container“ og „flex items: greinarmunur á foreldri og börnum eingngu þegar flexbox er notað.</label
+      >
+    </div>
+  
+    <div class="answer">
+      <input
+        class="answer__input"
+        data-correct="true"
+        type="radio"
+        name="question2"
+        id="question2-3"
+      />
+      <label class="answer__label" for="question2-3"
+        >„Flex container“ og „flex items; „grid container“ og „grid items“: greinarmunur á foreldri og börnum þegar flexbox og CSS grid er notað.</label
+      >
+    </div>
+  
+        <button>Svara</button>
+      </form>
+    </section>
+  
+    <section class="question">
+      <h2>Spurning 4</h2>
+      <div class="question__text"><p>Þegar við notum flexbox hvað af eftirfarandi er satt? Gerið ráð fyrir að skjal sé lesið frá vinstri til hægri.</p></div>
+      <form class="question__form">
+        
+    <div class="answer">
+      <input
+        class="answer__input"
+        data-correct="true"
+        type="radio"
+        name="question3"
+        id="question3-0"
+      />
+      <label class="answer__label" for="question3-0"
+        >Höfum skilgreinda tvo ása: aðalás og krossás sem eru hornréttir; sjálfgefin röðun er á aðalás frá vinstri til hægri.</label
+      >
+    </div>
+  
+    <div class="answer">
+      <input
+        class="answer__input"
+        data-correct="false"
+        type="radio"
+        name="question3"
+        id="question3-1"
+      />
+      <label class="answer__label" for="question3-1"
+        >Höfum skilgreinda tvo ása: aðalás og krossás sem eru samsíða; sjálfgefin röðun er á krossás frá vinstri til hægri.</label
+      >
+    </div>
+  
+    <div class="answer">
+      <input
+        class="answer__input"
+        data-correct="false"
+        type="radio"
+        name="question3"
+        id="question3-2"
+      />
+      <label class="answer__label" for="question3-2"
+        >Höfum skilgreinda tvo ása: aðalás og krossás sem eru samsíða; sjálfgefin röðun er á aðalás frá vinstri til hægri.</label
+      >
+    </div>
+  
+    <div class="answer">
+      <input
+        class="answer__input"
+        data-correct="false"
+        type="radio"
+        name="question3"
+        id="question3-3"
+      />
+      <label class="answer__label" for="question3-3"
+        >Höfum skilgreinda tvo ása: aðalás og krossás sem eru hornréttir; sjálfgefin röðun er á krossás frá vinstri til hægri.</label
+      >
+    </div>
+  
+        <button>Svara</button>
+      </form>
+    </section>
+  
+    </div>
+    <p><a href="index.html">Til baka</a></p>
+  </main>
+      </body>
+    </html>

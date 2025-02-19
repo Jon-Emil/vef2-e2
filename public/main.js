@@ -1,34 +1,25 @@
-function submitHandler(e) {
-  e.preventDefault();
-
-  /** @type HTMLElement */
-  const form = e.target;
-
-  // Find all elements
-  const correct = form.querySelector('[data-correct="true"]');
-  const selected = form.querySelector(':checked');
-
-  if (!correct) {
-    console.error('correct answer not found');
-    return;
-  }
-
-  // Set the correct and incorrect classes
-  if (correct !== selected) {
-    selected?.parentElement?.classList.add('answer--incorrect');
-  }
-
-  correct.parentElement?.classList.add('answer--correct');
-
-  // Disable all inputs and button
-  form.querySelectorAll('input').forEach((input) => {
-    input.disabled = true;
+document.addEventListener("DOMContentLoaded", () => {
+  const inputs = document.querySelectorAll("input[type='radio']");
+  
+  inputs.forEach(input => {
+      input.addEventListener("change", () => {
+          const form = input.closest("form");
+          if (form) {
+            const labels = form.querySelectorAll("label");
+            
+            labels.forEach(label => {
+                label.classList.remove("correct", "incorrect");
+            });
+          }
+          
+          const label = input.closest("label");
+          if (label) {
+            if (input.classList.contains("true")) {
+                label.classList.add("correct");
+            } else if (input.classList.contains("false")) {
+                label.classList.add("incorrect");
+            }
+          }
+      });
   });
-  form.querySelector('button')?.setAttribute('disabled', 'disabled');
-}
-
-const forms = document.querySelectorAll('.question__form');
-
-forms.forEach((form) => {
-  form.addEventListener('submit', submitHandler);
 });

@@ -39,22 +39,8 @@ router.get('/form', (req, res) => {
 router.post('/form', async (req, res) => {
   const { category, question, answer1, answer2, answer3, answer4, rett_svar } =
     req.body;
-  //const answers = [answer1, answer2, answer3, answer4];
 
   console.log(req.body);
-
-  // Hér þarf að setja upp validation, hvað ef name er tómt? hvað ef það er allt handritið að BEE MOVIE?
-  // Hvað ef það er SQL INJECTION? HVAÐ EF ÞAÐ ER EITTHVAÐ ANNAÐ HRÆÐILEGT?!?!?!?!?!
-  // TODO VALIDATION OG HUGA AÐ ÖRYGGI
-
-  // Ef validation klikkar, senda skilaboð um það á notanda
-
-  // Ef allt OK, búa til í gagnagrunn.
-
-  //allt required svo aldrei empty
-  //passa < max chars
-  //fara gegnum xss
-  //spurningar þurfa vera unique?
 
   if (question.length > 512) {
     res.render('form-created', {
@@ -63,17 +49,24 @@ router.post('/form', async (req, res) => {
     });
     return;
   }
-  if (question !== xss(question)) {
+  if (question != xss(question)) {
     res.render('form-created', {
       title: 'Spurning ekki búinn til',
       info: 'Spurning stóðst ekki öryggisprófun.',
     });
     return;
   }
-  let result = await getDatabase()?.query(
-    'SELECT * FROM questions WHERE question = $1',
-    [question],
-  );
+
+  const env = environment(process.env, logger);
+  if (!env) {
+    process.exit(1);
+  }
+  const db = getDatabase();
+
+  let result = await db?.query('SELECT * FROM questions WHERE content = $1', [
+    question,
+  ]);
+
   const questions = result?.rows ?? [];
   if (questions.length !== 0) {
     res.render('form-created', {
@@ -93,7 +86,7 @@ router.post('/form', async (req, res) => {
       });
       return;
     }
-    if (answer !== xss(answer)) {
+    if (answer != xss(answer)) {
       res.render('form-created', {
         title: 'Spurning ekki búinn til',
         info: `Svar nr. ${i + 1} stóðst ekki öryggisprófun`,
@@ -101,12 +94,6 @@ router.post('/form', async (req, res) => {
       return;
     }
   }
-
-  const env = environment(process.env, logger);
-  if (!env) {
-    process.exit(1);
-  }
-  const db = getDatabase();
 
   const questionResult = await db?.query(
     `INSERT INTO questions (categoryName, content) 

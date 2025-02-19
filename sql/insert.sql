@@ -64,7 +64,3 @@ INSERT INTO answers (questionID, content, correct) VALUES (11, 'Búið til `fetc
 INSERT INTO answers (questionID, content, correct) VALUES (11, 'Búið til `fetch` request kall sem verður að tilgreina URL, HTTP aðferð og stöðukóða; villuathugun á kalli og svari með tilliti til HTTP; gögn sótt í response með villuathugun.', false);
 INSERT INTO answers (questionID, content, correct) VALUES (11, 'Búið til `fetch` request kall sem tilgreinir að minnsta kosti URL; villuathugun á kalli og svari með tilliti til URL; gögn sótt í response.', false);
 INSERT INTO answers (questionID, content, correct) VALUES (11, 'Búið til `fetch` request kall sem tilgreinir að minnsta kosti URL; villuathugun á kalli og svari með tilliti til HTTP; eingöngu JSON gögn sótt í response með villuathugun.', false);
-
-
-
-

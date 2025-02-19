@@ -1,74 +1,96 @@
-:root {
-  --font-base-size: 16px;
-  --font-base-family: system-ui, helvetica, arial, sans-serif;
-  --max-inline-size: 50rem;
-  --spacing: 1rem;
-
-  --color-correct: #bffbbf;
-  --color-incorrect: #fdbcb5;
+* {
+  margin: 0;
+  padding: 0;
 }
 
 html {
   box-sizing: border-box;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-  margin: 0;
-  padding: 0;
+.correct {
+  background-color: #373;
 }
 
+.incorrect {
+background-color: #733;
+}  
+
 body {
+  background-color: #010101;
   display: flex;
-  min-block-size: 100vh;
-  font-family: var(--font-base-family);
-  font-size: var(--font-base-size);
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
 }
 
 main {
-  display: grid;
-  align-content: flex-start;
-  grid-gap: calc(var(--spacing));
-  margin-inline: auto;
-  padding: var(--spacing);
-  inline-size: 100%;
-  max-inline-size: var(--max-inline-size);
+  background-color: #111;
+  flex: 1;
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+  gap: 12px;
 }
 
-h1,
-h2,
-p {
-  margin-block-end: var(--spacing);
+ul {
+  list-style-type: none;
+  display: flex;
+  gap: 12px;
 }
 
-.questions {
-  display: grid;
-  grid-gap: calc(var(--spacing) * 2);
+h1, h2, h3, label, p {
+  color: #efe;
 }
 
-.question__form {
-  display: grid;
-  grid-gap: var(--spacing);
+form {
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
-.question__form button {
-  max-inline-size: fit-content;
-  padding-inline: var(--spacing);
-  padding-block: calc(var(--spacing) / 2);
+label {
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
-.answer {
-  margin-inline: calc(var(--spacing) * -1);
-  padding-inline: var(--spacing);
-  padding-block: calc(var(--spacing) / 2);
+a, form > button {
+  display: inline-block;
+  padding: 10px 15px;
+  text-decoration: none; 
+  background-color: #79797a;
+  color: white; 
+  border-radius: 5px; 
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  width: 100px;
+  height: 60%;
 }
 
-.answer--correct {
-  background-color: var(--color-correct);
+a:hover, form > button:hover {
+  background-color: #56277c;
 }
 
-.answer--incorrect {
-  background-color: var(--color-incorrect);
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+header li {
+  height: 100%;
+}
+
+form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="text"] {
+  width: 500px;
 }

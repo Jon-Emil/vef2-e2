@@ -13,8 +13,8 @@ app.set('view engine', 'ejs');
 
 app.use('/', router);
 
-const hostname = '127.0.0.1';
-const port = 3000;
+const hostname = 'dpg-cur26gd2ng1s73cl1vm0-a.oregon-postgres.render.com';
+const port = 5432;
 
 app.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);

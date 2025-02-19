@@ -1,5 +1,18 @@
 <%- include('header') -%>
 
-spurnigaflokkur!
+Spurningar:
+
+<% for (const question of questions) { %>
+    <h3><%=question.content%></h3>
+    <form>
+        <% for (const answer of answers) { %>
+            <% if ( answer.questionid == question.id ) { %>
+                <label>
+                    <input type="radio" name="<%=question.id%>" class="<%=answer.correct%>"><%=answer.content%></input>
+                </label>
+            <% } %>
+        <% } %>
+    </form>
+<% } %>
 
 <%- include('footer') -%>

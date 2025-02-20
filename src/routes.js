@@ -160,5 +160,7 @@ router.use((err, req, res, next) => {
     message: err.message || 'Eitthvað fór úrskeiðis!',
     status: statusCode, 
   });
+
+  next();
 });
 

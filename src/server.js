@@ -1,5 +1,6 @@
 import express from 'express';
 import { router } from './routes.js';
+import process from 'node:process';
 
 const app = express();
 

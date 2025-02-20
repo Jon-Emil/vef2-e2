@@ -3,6 +3,7 @@ import { getDatabase } from './lib/db.client.js';
 import { environment } from './lib/environment.js';
 import { logger } from './lib/logger.js';
 import xss from 'xss';
+import process from 'node:process';
 
 export const router = express.Router();
 
@@ -141,4 +142,23 @@ router.post('/form', async (req, res) => {
     title: 'Spurning búinn til',
     info: 'Allt gekk upp!',
   });
+
 });
+
+router.use((req, res) => {
+  res.status(404).render('404', { title: 'Síða fannst ekki' });
+});
+
+router.use((err, req, res, next) => {
+  console.error(err.stack); 
+
+  const statusCode = err.status || 500;
+  res.status(statusCode); 
+
+  res.render('error', {
+    title: 'Villa á vefþjóninum',
+    message: err.message || 'Eitthvað fór úrskeiðis!',
+    status: statusCode, 
+  });
+});
+

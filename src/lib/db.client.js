@@ -1,6 +1,8 @@
 import pg from 'pg';
 import { environment } from './environment.js';
 import { logger as loggerSingleton } from './logger.js';
+import process from 'node:process';
+
 
 /**
  * Database class.
